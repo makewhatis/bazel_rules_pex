@@ -46,12 +46,12 @@ Lastly, make sure that `tools/build_rules/BUILD` exists, even if it is empty,
 so that Bazel can find your `prelude_bazel` file.
 """
 
-pex_file_types = FileType([".py"])
-egg_file_types = FileType([".egg", ".whl"])
-req_file_types = FileType([".txt"])
+pex_file_types = [".py"]
+egg_file_types = [".egg", ".whl"]
+req_file_types = [".txt"]
 
 # Repos file types according to: https://www.python.org/dev/peps/pep-0527/
-repo_file_types = FileType([
+repo_file_types = [
     ".egg",
     ".whl",
     ".tar.gz",
@@ -62,7 +62,7 @@ repo_file_types = FileType([
     ".tar.Z",
     ".tgz",
     ".tbz"
-])
+]
 
 # As much as I think this test file naming convention is a good thing, it's
 # probably a bad idea to impose it as a policy to all OSS users of these rules,
